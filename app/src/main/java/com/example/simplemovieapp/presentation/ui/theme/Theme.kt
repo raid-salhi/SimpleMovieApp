@@ -1,4 +1,4 @@
-package com.example.simplemovieapp.ui.theme
+package com.example.simplemovieapp.presentation.ui.theme
 
 import android.app.Activity
 import android.os.Build
