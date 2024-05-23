@@ -4,6 +4,10 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 
 @Composable
-fun DetailsScreen(navController: NavHostController, id: Int) {
+fun DetailsScreen(
+    navController: NavHostController,
+    detailsScreenViewModel: DetailsScreenViewModel,
+    id: Int
+) {
 
 }

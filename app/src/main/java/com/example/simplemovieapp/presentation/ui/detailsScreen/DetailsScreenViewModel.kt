@@ -7,12 +7,13 @@ import androidx.lifecycle.viewModelScope
 import com.example.simplemovieapp.data.model.Movie
 import com.example.simplemovieapp.data.model.Movies
 import com.example.simplemovieapp.data.repository.MovieApiRepo
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import javax.inject.Inject
-
+@HiltViewModel
 class DetailsScreenViewModel @Inject constructor(private val repo: MovieApiRepo): ViewModel(){
     private val _movie = mutableStateOf<Movie?>(null)
     val movie = _movie.value
