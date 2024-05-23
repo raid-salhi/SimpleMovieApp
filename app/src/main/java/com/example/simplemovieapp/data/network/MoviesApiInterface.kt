@@ -12,11 +12,11 @@ import javax.inject.Singleton
 @Singleton
 interface MoviesApiInterface {
     @GET("discover/movie")
-    suspend fun getMovies(
+    fun getMovies(
         @Header("Authorization") token: String = Constant.API_KEY
     ): Call<Movies>
     @GET("movie/{movie_id}")
-    suspend fun getMovieById(
+    fun getMovieById(
         @Header("Authorization") token: String = Constant.API_KEY,
         @Path("movie_id") movieId: Int
     ): Call<Movie>
