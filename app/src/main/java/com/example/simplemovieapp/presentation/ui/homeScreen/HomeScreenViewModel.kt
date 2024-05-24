@@ -30,9 +30,8 @@ class HomeScreenViewModel @Inject constructor(private val repo: MovieApiRepo): V
                 override fun onResponse(call: Call<Movies>, response: Response<Movies>) {
                     if (response.isSuccessful) {
                         _list.value = response.body() ?: Movies(0,emptyList())
-                        Log.d("MovieApi", "onResponse: ${movieList.value.results.size}")
                     } else {
-                        Log.d("MovieApi", "onResponse: failed fetch data ${response.code()} ${response.headers()}")
+                        Log.d("MovieApi", "onResponse: failed fetch data ${response.code()}")
                     }
                 }
 

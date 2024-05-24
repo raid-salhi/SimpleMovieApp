@@ -16,7 +16,7 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailsScreenViewModel @Inject constructor(private val repo: MovieApiRepo): ViewModel(){
     private val _movie = mutableStateOf<Movie?>(null)
-    val movie = _movie.value
+    val movie = _movie
 
     fun getMovie(id: Int){
         viewModelScope.launch {
