@@ -7,13 +7,14 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Path
+import retrofit2.http.Query
 import javax.inject.Singleton
 
 @Singleton
 interface MoviesApiInterface {
     @GET("discover/movie")
     fun getMovies(
-        @Header("Authorization") token: String = Constant.API_KEY
+        @Query("api_key") token: String = Constant.API_KEY
     ): Call<Movies>
     @GET("movie/{movie_id}")
     fun getMovieById(

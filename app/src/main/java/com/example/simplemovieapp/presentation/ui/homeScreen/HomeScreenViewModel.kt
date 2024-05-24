@@ -20,7 +20,7 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeScreenViewModel @Inject constructor(private val repo: MovieApiRepo): ViewModel() {
     private val _list = mutableStateOf(Movies(0,emptyList()))
-    val movieList= _list.value.results
+    val movieList= _list
     init {
         getMovies()
     }
@@ -30,8 +30,9 @@ class HomeScreenViewModel @Inject constructor(private val repo: MovieApiRepo): V
                 override fun onResponse(call: Call<Movies>, response: Response<Movies>) {
                     if (response.isSuccessful) {
                         _list.value = response.body() ?: Movies(0,emptyList())
+                        Log.d("MovieApi", "onResponse: ${movieList.value.results.size}")
                     } else {
-                        Log.d("MovieApi", "onResponse: failed fetch data")
+                        Log.d("MovieApi", "onResponse: failed fetch data ${response.code()} ${response.headers()}")
                     }
                 }
 
