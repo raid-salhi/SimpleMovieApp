@@ -73,8 +73,6 @@ dependencies {
     //Retrofit
     implementation(libs.retrofit2.retrofit)
     implementation (libs.converter.gson)
-    //Okhttp
-    implementation("com.squareup.okhttp3:okhttp:4.10.0")
     //Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)

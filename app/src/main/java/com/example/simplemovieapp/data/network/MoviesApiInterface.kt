@@ -18,7 +18,7 @@ interface MoviesApiInterface {
     ): Call<Movies>
     @GET("movie/{movie_id}")
     fun getMovieById(
-        @Header("Authorization") token: String = Constant.API_KEY,
+        @Query("api_key") token: String = Constant.API_KEY,
         @Path("movie_id") movieId: Int
     ): Call<Movie>
 }
