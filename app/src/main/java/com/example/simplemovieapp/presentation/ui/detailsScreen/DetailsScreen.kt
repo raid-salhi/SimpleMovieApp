@@ -55,13 +55,14 @@ fun MovieDetails(movie: Movie) {
     Column (
         modifier = Modifier
             .fillMaxSize()
+            .padding(16.dp)
             .verticalScroll(rememberScrollState())
     ) {
         MovieImage(
             modifier=Modifier
                 .align(Alignment.CenterHorizontally)
                 .fillMaxHeight(0.5f)
-                .padding(bottom = 10.dp),
+                .padding(vertical = 10.dp),
             poster=movie.poster
         )
         TitleText(

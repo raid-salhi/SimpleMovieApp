@@ -16,6 +16,7 @@ import androidx.navigation.NavHostController
 import com.example.simplemovieapp.data.model.Movies
 import com.example.simplemovieapp.presentation.componants.MovieItem
 import com.example.simplemovieapp.presentation.navigation.Screen
+import java.lang.Math.random
 
 @Composable
 fun HomeScreen(
@@ -41,9 +42,11 @@ fun HomeScreen(
             LazyColumn(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(16.dp)
+                    .padding(16.dp),
             ){
-                items(items = moviesList.value.results){ movie ->
+                items(
+                    items = moviesList.value.results,
+                    ){ movie ->
                     MovieItem(
                         movie = movie,
                         onClick={
